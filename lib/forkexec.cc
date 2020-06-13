@@ -161,7 +161,7 @@ queue_pipe::queue_pipe()
 
 int queue_pipe::start()
 {
-  int redirs[] = { REDIRECT_PIPE_TO, REDIRECT_NULL, REDIRECT_NULL };
+  int redirs[] = { REDIRECT_PIPE_TO, REDIRECT_NULL, REDIRECT_NONE };
   if (!fork_exec::start(nqpath(), 3, redirs))
     return -1;
   return redirs[0];
